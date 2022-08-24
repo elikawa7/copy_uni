@@ -47,7 +47,7 @@ int buscar(pila raiz, int valor){
 	int buscado = -45; 
 	if (raiz == NULL){
 		printf("No se puede buscar en una pila vacia...\n"); 
-		return; 
+		return buscado; 
 	}
 	while (raiz != NULL){
 		if (raiz->dato == valor){
@@ -61,7 +61,7 @@ int buscar(pila raiz, int valor){
 
 void escribirenArchivo(const char* nombre, pila p){
 
-	FILE arch = fopen(nombre, "w"); 
+	FILE *arch = fopen(nombre, "w"); 
 	if (arch == NULL){
 		printf("No se pudo abrir el archivo para escribir en el... \n"); 
 		return; 
@@ -90,7 +90,7 @@ int main(){
 	insertar(&p, 4);
 	insertar(&p, 5);
 	mostrarPila(p);
-	int b = buscar(&p, 3);
+	int b = buscar(p, 3);
 	printf("%d el valor buscado: ", b); 
 	mostrarPila(p); 
 	
