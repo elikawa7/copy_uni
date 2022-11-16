@@ -31,6 +31,8 @@ void sacar(pila* raiz){
 		*raiz = (*raiz)->sgt; 
 		free(temp); //liberamos la memoria.
 		return; 
+	}else{
+		flag=0;
 	}
 	printf("No se pudo extrear el valor de una pila vacia...\n"); 
 }
